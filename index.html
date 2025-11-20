@@ -39,7 +39,15 @@
                 border-top: 1px solid;
                 border-left: 1px solid;
             }
-
+            a   {
+                color: white;
+                text-decoration: dashed;
+            }
+            a:hover {
+                color: red;
+                text-decoration: underline;
+                transition: color 0.5s ease
+            }
             
         </style>
         <style>
@@ -49,8 +57,8 @@
     <body>
         <header>
             <h2>Ф.И.О. студента: Лазарев Владимир Владимирович</h2>
-            <h3>Место практики: ТОО “Timing Astana”</h3>
-            <h1 class="header">Отчет по практие от 24.11.2025</h1>
+            <h3>Место практики:<a href="https://www.timing.kz/"> ТОО “Timing Astana”</a></h3>
+            <h1 class="header">Отчет по практике от 24.11.2025</h1>
         </header>
         <main>
             <div class="tasktables">
@@ -60,56 +68,86 @@
                             <th class="cellnumber">№</th>
                             <th class="celltask">Задание</th>
                             <th class="cellcompetence">Компетенция</th>
+
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="cellnumber">1</td>
+                            <td class="cellnumber" id="task1">1</td>
                             <td class="celltask">Ознакомиться с правилами техники безопасности при работе с электрооборудованием и внутренним распорядком сервисного центра.</td>
                             <td class="cellcompetence">Соблюдает правила техники безопасности и внутреннего распорядка в сервисном центре.</td>
                         </tr>
                         <tr>
-                            <td class="cellnumber">2</td>
-                            <td class="celltask">Наблюдать за процессом приемки оборудования от клиента: оформление актов, фиксация неисправностей и комплектации.</td>
+                            <td class="cellnumber" id="task2">2</td>
+                             <td class="celltask" id="task2">Наблюдать за процессом приемки оборудования от клиента: оформление актов, фиксация неисправностей и комплектации.</td>
                             <td class="cellcompetence">Анализирует организацию работы приемного пункта и ведение первичной документации.</td>
                         </tr>
                         <tr>
-                            <td class="cellnumber">3</td>
+                            <td class="cellnumber" id="task3">3</td>
                             <td class="celltask">Помогать в ведении журналов учета ремонта, регистрации серийных номеров и инвентаризации комплектующих (склад запчастей).</td>
                             <td class="cellcompetence">Ведет и оформляет техническую и логистическую документацию в соответствии с требованиями.</td>
                         </tr>
                         <tr>
-                            <td class="cellnumber">4</td>
+                            <td class="cellnumber" id="task4">4</td>
                             <td class="celltask">Участвовать в диагностике и ремонте ноутбуков: выявление неисправностей компонентов, замена экранов, клавиатур, DC-in разъемов.</td>
                             <td class="cellcompetence">Применяет знания и навыки по модульному и компонентному ремонту ноутбуков на практике.</td>
                         </tr>
                         <tr>
-                            <td class="cellnumber">5</td>
+                            <td class="cellnumber" id="task5">5</td>
                             <td class="celltask">Составлять ежедневные и еженедельные отчеты о проделанной работе с описанием диагностированных и устраненных неисправностей.</td>
                             <td class="cellcompetence">Систематизирует и обобщает полученный практический опыт и результаты ремонта.</td>
                         </tr>
                         <tr>
-                            <td class="cellnumber">6</td>
+                            <td class="cellnumber" id="task6">6</td>
                             <td class="celltask">Принимать участие в обслуживании настольных ПК: профилактическая чистка, замена термопасты, устранение проблем с "No POST/No Boot".</td>
                             <td class="cellcompetence">Владеет практическими навыками по техническому обслуживанию и устранению типовых неисправностей ПК.</td>
                         </tr>
                         <tr>
-                            <td class="cellnumber">7</td>
+                            <td class="cellnumber" id="task7">7</td>
                             <td class="celltask">Участвовать в настройке, обновлении и переустановке операционных систем (Windows/macOS) и необходимого клиентского программного обеспечения.</td>
                             <td class="cellcompetence">Выполняет операции по настройке и обслуживанию программного обеспечения и ОС.</td>
                         </tr>
                         <tr>
-                            <td class="cellnumber">8</td>
+                            <td class="cellnumber" id="task8">8</td>
                             <td class="celltask">Наблюдать за процессами диагностики сложных неисправностей (например, проблемы с питанием на материнской плате) с использованием лабораторного оборудования (осциллограф, программатор).</td>
                             <td class="cellcompetence">Анализирует процессы диагностики на компонентном уровне и работу с измерительным оборудованием.</td>
                         </tr>
                         <tr>
-                            <td class="cellnumber">9</td>
+                            <td class="cellnumber" id="task9">9</td>
                             <td class="celltask">Изучить методики ремонта и техническую документацию (схемы) на типовые модели ноутбуков и моноблоков, используемые в работе.</td>
                             <td class="cellcompetence">Читает и анализирует структурные и принципиальные схемы электронных устройств.</td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            <div class="tasks">
+                <div>
+                    <a href="#task1"><h2>Задание 1</h2></a>
+                </div>
+                <div>
+                    <a href="#task2"><h2>Задание 2</h2></a>
+                </div>
+                <div>
+                    <a href="#task3"><h2>Задание 3</h2></a>
+                </div>
+                <div>
+                    <a href="#task4"><h2>Задание 4</h2></a>
+                </div>
+                <div>
+                    <a href="#task5"><h2>Задание 5</h2></a>
+                </div>
+                <div>
+                    <a href="#task6"><h2>Задание 6</h2></a>
+                </div>
+                <div>
+                    <a href="#task7"><h2>Задание 7</h2></a>
+                </div>
+                <div>
+                    <a href="#task8"><h2>Задание 8</h2></a>
+                </div>
+                <div>
+                    <a href="#task9"><h2>Задание 9</h2></a>
+                </div>
             </div>
         </main>
         <footer>
