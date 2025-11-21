@@ -3,12 +3,15 @@
         <title>Практика-Итоговая работа</title>
         <style>
             body   {
-                background-color: rgb(44, 44, 44);
-                color: rgb(255, 255, 255);
                 margin: 1%;
                 font-family: "Comic Neue", cursive;
                 font-weight: 300;
                 font-style: normal;
+                background-color: var(--bg-color);
+                color: var(--text-color);
+                transition: background-color 0.3s, color 0.3s; /* Плавный переход */
+                min-height: 100vh;
+                padding: 20px;
             }
             .header {
                 text-align: center
@@ -16,10 +19,12 @@
             .practice-tasks {
                 margin: 3%;
                 border: 1px solid;
+                border-color: var(--text-color);
             }
             .tasktables {
                 width: 40%;
                 text-align: center;
+                
             }
             .cellnumber   {
                 width: 5%;
@@ -40,7 +45,7 @@
                 border-left: 1px solid;
             }
             a   {
-                color: white;
+                color: var(--text-color);
                 text-decoration: dashed;
             }
             a:hover {
@@ -49,16 +54,78 @@
                 transition: color 0.5s ease
             }
             
+            :root, .light-theme {
+                --bg-color: #f0f0f0; /* Светлый фон */
+                --text-color: #333333; /* Темный текст */
+                --button-bg: #4CAF50; /* Зеленая кнопка */
+                --button-text: white;
+            }
+
+            .dark-theme {
+                --bg-color: #333333; /* Темный фон */
+                --text-color: #f0f0f0; /* Светлый текст */
+                --button-bg: #008CBA; /* Синяя кнопка */
+                --button-text: white;
+            }
+
+            #theme-toggle {
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                background-color: var(--button-bg);
+                color: var(--button-text);
+                margin-top: 20px;
+                transition: background-color 0.3s;
+            }
+
+
+
         </style>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
         </style>
+
+        <script>
+                        document.addEventListener('DOMContentLoaded', () => {
+                const toggleButton = document.getElementById('theme-toggle');
+                const body = document.body;
+
+                // Функция для обновления текста кнопки
+                function updateButtonText(isDark) {
+                    toggleButton.textContent = isDark
+                        ? 'Переключить на Светлую Тему'
+                        : 'Переключить на Темную Тему';
+                }
+
+                // Проверяем, какая тема установлена сейчас
+                let isDark = body.classList.contains('dark-theme');
+                updateButtonText(isDark);
+
+                toggleButton.addEventListener('click', () => {
+                    // Переключаем класс
+                    if (body.classList.contains('light-theme')) {
+                        body.classList.remove('light-theme');
+                        body.classList.add('dark-theme');
+                        isDark = true;
+                    } else {
+                        body.classList.remove('dark-theme');
+                        body.classList.add('light-theme');
+                        isDark = false;
+                    }
+
+                    // Обновляем текст кнопки
+                    updateButtonText(isDark);
+                });
+            });
+        </script>
     </head>
     <body>
         <header>
             <h2>Ф.И.О. студента: Лазарев Владимир Владимирович</h2>
             <h3>Место практики:<a href="https://www.timing.kz/"> ТОО “Timing Astana”</a></h3>
             <h1 class="header">Отчет по практике от 24.11.2025</h1>
+            <button id="theme-toggle">Переключить на Темную Тему</button>
         </header>
         <main>
             <div class="tasktables">
