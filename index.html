@@ -1,264 +1,166 @@
-<html>
-    <head>
-        <title>Практика-Итоговая работа</title>
-        <style>
-            body   {
-                margin: 0;
-                font-family: "Comic Neue", cursive;
-                font-weight: 300;
-                font-style: normal;
-                background-color: var(--bg-color);
-                color: var(--text-color);
-                transition: background-color 0.3s, color 0.3s;
-                min-height: 100vh;
-                padding: 0;
-            }
-            .header {
-                text-align: center;
-                font-size: 2.2em;
-                margin-top: 30px;
-                margin-bottom: 20px;
-                letter-spacing: 1px;
-                text-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            }
-            .practice-tasks {
-                margin: 0 auto;
-                margin-top: 30px;
-                border: none;
-                box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-                border-radius: 18px;
-                overflow: hidden;
-                background: rgba(255,255,255,0.85);
-            }
-            .tasktables {
-                width: 80%;
-                max-width: 900px;
-                margin: 0 auto;
-                text-align: center;
-            }
-            .cellnumber   {
-                width: 7%;
-                text-align: center;
-                background: #f7f7f7;
-                border-right: 1px solid #e0e0e0;
-                padding: 12px 0;
-            }
-            .celltask   {
-                width: 38%;
-                padding: 12px 18px;
-                background: #fff;
-                border-right: 1px solid #e0e0e0;
-            }
-            .cellcompetence {
-                width: 38%;
-                padding: 12px 18px;
-                background: #f7f7f7;
-            }
-            a   {
-                color: #008CBA;
-                text-decoration: none;
-                transition: color 0.3s;
-                font-weight: 400;
-            }
-            a:hover {
-                color: #ff0000;
-                text-decoration: underline;
-            }
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechFix - Гид по ремонту техники</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <i class="fas fa-tools"></i> TechFix
+            </div>
+            <nav>
+                <a href="#hero">Главная</a>
+                <a href="#guides">Инструкции</a>
+                <a href="#tips">Советы</a>
+                <a href="#footer">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Ремонтируй технику сам</h1>
+            <p>Пошаговые руководства для ПК, ноутбуков и принтеров. Экономь на сервисе.</p>
             
-            :root, .light-theme {
-                --bg-color: #f0f4fa;
-                --text-color: #222;
-                --button-bg: #008CBA;
-                --button-text: #fff;
-            }
-
-            .dark-theme {
-                --bg-color: #23272f;
-                --text-color: #f0f0f0;
-                --button-bg: #ff0000;
-                --button-text: #fff;
-            }
-
-            #theme-toggle {
-                padding: 10px 28px;
-                border: none;
-                border-radius: 18px;
-                cursor: pointer;
-                background-color: var(--button-bg);
-                color: var(--button-text);
-                transition: background-color 0.3s, box-shadow 0.3s;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-                position: fixed;
-                top: 24px;
-                right: 32px;
-                z-index: 100;
-            }
-            .tasks {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 18px;
-                justify-content: center;
-                margin-top: 40px;
-                margin-bottom: 40px;
-            }
-            .tasks div {
-                background: rgba(255,255,255,0.85);
-                border-radius: 12px;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-                padding: 10px 24px;
-                transition: box-shadow 0.3s;
-            }
-            .tasks div:hover {
-                box-shadow: 0 4px 16px rgba(0,0,0,0.16);
-            }
-            .tasks h2 {
-                font-size: 1.1em;
-                margin: 0;
-            }
-            footer {
-                text-align: center;
-                padding: 24px 0 12px 0;
-                color: #888;
-                font-size: 1em;
-                background: transparent;
-            }
-
-        </style>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
-        </style>
-
-        <script>
-                        document.addEventListener('DOMContentLoaded', () => {
-                const toggleButton = document.getElementById('theme-toggle');
-                const body = document.body;
-
-                function updateButtonText(isDark) {
-                    toggleButton.textContent = isDark
-                        ? 'Светлая тема'
-                        : 'Темная тема';
-                }
-
-                let isDark = body.classList.contains('dark-theme');
-                updateButtonText(isDark);
-
-                toggleButton.addEventListener('click', () => {
-                    // Переключаем класс
-                    if (body.classList.contains('light-theme')) {
-                        body.classList.remove('light-theme');
-                        body.classList.add('dark-theme');
-                        isDark = true;
-                    } else {
-                        body.classList.remove('dark-theme');
-                        body.classList.add('light-theme');
-                        isDark = false;
-                    }
-
-                    updateButtonText(isDark);
-                });
-            });
-        </script>
-    </head>
-    <body>
-        <header>
-            <button id="theme-toggle">Темная тема</button>
-            <h2 style="text-align:center; margin-top:60px; margin-bottom:10px;">Ф.И.О. студента: <span style="font-weight:400;">Лазарев Владимир Владимирович</span></h2>
-            <h3 style="text-align:center; margin-bottom:10px;">Место практики:<a href="https://www.timing.kz/"> ТОО “Timing Astana”</a></h3>
-            <h1 class="header">Отчет по практике от 24.11.2025</h1>
-        </header>
-        <main>
-            <div class="tasktables">
-                <table class="practice-tasks">
-                    <thead>
-                        <tr>
-                            <th class="cellnumber">№</th>
-                            <th class="celltask">Задание</th>
-                            <th class="cellcompetence">Компетенция</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="cellnumber" id="task1">1</td>
-                            <td class="celltask">Ознакомиться с правилами техники безопасности при работе с электрооборудованием и внутренним распорядком сервисного центра.</td>
-                            <td class="cellcompetence">Соблюдает правила техники безопасности и внутреннего распорядка в сервисном центре.</td>
-                        </tr>
-                        <tr>
-                            <td class="cellnumber" id="task2">2</td>
-                             <td class="celltask" id="task2">Наблюдать за процессом приемки оборудования от клиента: оформление актов, фиксация неисправностей и комплектации.</td>
-                            <td class="cellcompetence">Анализирует организацию работы приемного пункта и ведение первичной документации.</td>
-                        </tr>
-                        <tr>
-                            <td class="cellnumber" id="task3">3</td>
-                            <td class="celltask">Помогать в ведении журналов учета ремонта, регистрации серийных номеров и инвентаризации комплектующих (склад запчастей).</td>
-                            <td class="cellcompetence">Ведет и оформляет техническую и логистическую документацию в соответствии с требованиями.</td>
-                        </tr>
-                        <tr>
-                            <td class="cellnumber" id="task4">4</td>
-                            <td class="celltask">Участвовать в диагностике и ремонте ноутбуков: выявление неисправностей компонентов, замена экранов, клавиатур, DC-in разъемов.</td>
-                            <td class="cellcompetence">Применяет знания и навыки по модульному и компонентному ремонту ноутбуков на практике.</td>
-                        </tr>
-                        <tr>
-                            <td class="cellnumber" id="task5">5</td>
-                            <td class="celltask">Составлять ежедневные и еженедельные отчеты о проделанной работе с описанием диагностированных и устраненных неисправностей.</td>
-                            <td class="cellcompetence">Систематизирует и обобщает полученный практический опыт и результаты ремонта.</td>
-                        </tr>
-                        <tr>
-                            <td class="cellnumber" id="task6">6</td>
-                            <td class="celltask">Принимать участие в обслуживании настольных ПК: профилактическая чистка, замена термопасты, устранение проблем с "No POST/No Boot".</td>
-                            <td class="cellcompetence">Владеет практическими навыками по техническому обслуживанию и устранению типовых неисправностей ПК.</td>
-                        </tr>
-                        <tr>
-                            <td class="cellnumber" id="task7">7</td>
-                            <td class="celltask">Участвовать в настройке, обновлении и переустановке операционных систем (Windows/macOS) и необходимого клиентского программного обеспечения.</td>
-                            <td class="cellcompetence">Выполняет операции по настройке и обслуживанию программного обеспечения и ОС.</td>
-                        </tr>
-                        <tr>
-                            <td class="cellnumber" id="task8">8</td>
-                            <td class="celltask">Наблюдать за процессами диагностики сложных неисправностей (например, проблемы с питанием на материнской плате) с использованием лабораторного оборудования (осциллограф, программатор).</td>
-                            <td class="cellcompetence">Анализирует процессы диагностики на компонентном уровне и работу с измерительным оборудованием.</td>
-                        </tr>
-                        <tr>
-                            <td class="cellnumber" id="task9">9</td>
-                            <td class="celltask">Изучить методики ремонта и техническую документацию (схемы) на типовые модели ноутбуков и моноблоков, используемые в работе.</td>
-                            <td class="cellcompetence">Читает и анализирует структурные и принципиальные схемы электронных устройств.</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Что у вас сломалось? (например: принтер, перегрев...)">
+                <button onclick="filterGuides()"><i class="fas fa-search"></i></button>
             </div>
-            <div class="tasks">
-                <div>
-                    <a href="#task1"><h2>Задание 1</h2></a>
-                </div>
-                <div>
-                    <a href="#task2"><h2>Задание 2</h2></a>
-                </div>
-                <div>
-                    <a href="#task3"><h2>Задание 3</h2></a>
-                </div>
-                <div>
-                    <a href="#task4"><h2>Задание 4</h2></a>
-                </div>
-                <div>
-                    <a href="#task5"><h2>Задание 5</h2></a>
-                </div>
-                <div>
-                    <a href="#task6"><h2>Задание 6</h2></a>
-                </div>
-                <div>
-                    <a href="#task7"><h2>Задание 7</h2></a>
-                </div>
-                <div>
-                    <a href="#task8"><h2>Задание 8</h2></a>
-                </div>
-                <div>
-                    <a href="#task9"><h2>Задание 9</h2></a>
+        </div>
+    </section>
+
+    <section id="guides" class="container">
+        <h2>Популярные руководства</h2>
+        <div class="filter-buttons">
+            <button class="active" onclick="filterCategory('all')">Все</button>
+            <button onclick="filterCategory('pc')">ПК</button>
+            <button onclick="filterCategory('laptop')">Ноутбуки</button>
+            <button onclick="filterCategory('printer')">Принтеры</button>
+        </div>
+
+        <div class="grid-container" id="guidesGrid">
+            
+            <div class="card" data-category="pc">
+                <div class="card-icon pc-bg"><i class="fas fa-desktop"></i></div>
+                <div class="card-body">
+                    <span class="tag">ПК</span>
+                    <h3>Замена термопасты процессора</h3>
+                    <p>Компьютер греется и шумит? Пора менять термопасту. Пошаговый гид.</p>
+                    <div class="meta">
+                        <span><i class="fas fa-clock"></i> 30 мин</span>
+                        <span class="easy">Легко</span>
+                    </div>
+                    <a href="thermal-paste.html" class="btn-read" style="text-align: center; text-decoration: none;">Читать</a>
                 </div>
             </div>
-        </main>
-        <footer>
-            <footer>
-                &copy; 2025 Лазарев Владимир. Все права защищены.
-            </footer>
-        </footer>
-    </body>
+
+            <div class="card" data-category="laptop">
+                <div class="card-icon laptop-bg"><i class="fas fa-laptop"></i></div>
+                <div class="card-body">
+                    <span class="tag">Ноутбук</span>
+                    <h3>Залили клавиатуру: что делать?</h3>
+                    <p>Экстренные меры по спасению ноутбука от жидкости. Не включайте его!</p>
+                    <div class="meta">
+                        <span><i class="fas fa-clock"></i> 5 мин</span>
+                        <span class="hard">Важно</span>
+                    </div>
+                    <a href="water-damage.html" class="btn-read" style="text-align: center; text-decoration: none;">Читать</a>
+                </div>
+            </div>
+
+            <div class="card" data-category="printer">
+                <div class="card-icon printer-bg"><i class="fas fa-print"></i></div>
+                <div class="card-body">
+                    <span class="tag">Принтер</span>
+                    <h3>Замятие бумаги (Paper Jam)</h3>
+                    <p>Как правильно вытащить бумагу, чтобы не сломать датчики и ролики.</p>
+                    <div class="meta">
+                        <span><i class="fas fa-clock"></i> 10 мин</span>
+                        <span class="medium">Средне</span>
+                    </div>
+                    <a href="paper-jam.html" class="btn-read" style="text-align: center; text-decoration: none;">Читать</a>
+                </div>
+            </div>
+
+             <div class="card" data-category="pc">
+                <div class="card-icon pc-bg"><i class="fas fa-memory"></i></div>
+                <div class="card-body">
+                    <span class="tag">ПК</span>
+                    <h3>Установка оперативной памяти</h3>
+                    <p>Как выбрать и вставить планки RAM для ускорения работы компьютера.</p>
+                    <div class="meta">
+                        <span><i class="fas fa-clock"></i> 15 мин</span>
+                        <span class="easy">Легко</span>
+                    </div>
+                    <a href="ram-install.html" class="btn-read" style="text-align: center; text-decoration: none;">Читать</a>
+                </div>
+            </div>
+
+            <div class="card" data-category="printer">
+                <div class="card-icon printer-bg"><i class="fas fa-tint"></i></div>
+                <div class="card-body">
+                    <span class="tag">Принтер</span>
+                    <h3>Принтер печатает полосами</h3>
+                    <p>Чистка печатающей головки и дюз струйного принтера программно.</p>
+                    <div class="meta">
+                        <span><i class="fas fa-clock"></i> 20 мин</span>
+                        <span class="medium">Средне</span>
+                    </div>
+                    <a href="printer-stripes.html" class="btn-read" style="text-align: center; text-decoration: none;">Читать</a>
+                </div>
+            </div>
+
+            <div class="card" data-category="laptop">
+                <div class="card-icon laptop-bg"><i class="fas fa-hdd"></i></div>
+                <div class="card-body">
+                    <span class="tag">Ноутбук</span>
+                    <h3>Замена HDD на SSD</h3>
+                    <p>Ускоряем старый ноутбук в 5 раз с помощью твердотельного накопителя.</p>
+                    <div class="meta">
+                        <span><i class="fas fa-clock"></i> 60 мин</span>
+                        <span class="hard">Сложно</span>
+                    </div>
+                    <a href="ssd-upgrade.html" class="btn-read" style="text-align: center; text-decoration: none;">Читать</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="tips" class="container">
+        <h2>Необходимый минимум инструментов</h2>
+        <div class="tools-list">
+            <div class="tool-item">
+                <i class="fas fa-screwdriver"></i>
+                <h4>Набор отверток</h4>
+                <p>Крестовая (Philips) и плоская.</p>
+            </div>
+            <div class="tool-item">
+                <i class="fas fa-spray-can"></i>
+                <h4>Сжатый воздух</h4>
+                <p>Для выдувания пыли.</p>
+            </div>
+            <div class="tool-item">
+                <i class="fas fa-microchip"></i>
+                <h4>Термопаста</h4>
+                <p>Для охлаждения CPU.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <p>&copy; 2025 TechFix. Учебный проект.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
