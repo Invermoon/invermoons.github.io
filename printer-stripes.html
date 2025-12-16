@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Принтер полосит - TechFix</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <i class="fas fa-tools"></i> TechFix
+            </div>
+            <nav>
+                <a href="index.html">← На Главную</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container article-container">
+        
+        <div class="article-header">
+            <span class="tag" style="background: #e67e22; color: white;">Принтеры / Качество</span>
+            <h1>Почему принтер печатает полосами и как это исправить</h1>
+            <div class="meta">
+                <span><i class="fas fa-clock"></i> Время: 20 мин</span>
+                <span class="medium"><i class="fas fa-wrench"></i> Сложность: Средне</span>
+            </div>
+        </div>
+
+        <div class="warning-box" style="background-color: #e8f4fc; border-left-color: #3498db; color: #2c3e50;">
+            <i class="fas fa-info-circle"></i>
+            <strong>Определите тип принтера:</strong>
+            <ul style="margin-top: 5px;">
+                <li><strong>Струйный:</strong> Печатает жидкими чернилами (обычно цветные фото). Проблема: засохли дюзы.</li>
+                <li><strong>Лазерный:</strong> Печатает порошком (обычно черно-белые документы). Проблема: заканчивается тонер или износ вала.</li>
+            </ul>
+        </div>
+
+        <div class="steps">
+            
+            <h2 style="margin: 30px 0 20px; color: #3498db;">Вариант А: Струйный принтер (Epson, Canon, HP)</h2>
+            
+            <div class="step">
+                <div class="step-number" style="background: #3498db;">1</div>
+                <div class="step-content">
+                    <h3>Программная очистка</h3>
+                    <p>Не разбирайте принтер! В 90% случаев помогает встроенная утилита.</p>
+                    <p>Зайдите в: <em>Пуск -> Устройства и принтеры -> Ваш принтер (ПКМ) -> Настройка печати -> Обслуживание (Service)</em>.</p>
+                    <p>Нажмите кнопку <strong>"Очистка печатающей головки"</strong> (Head Cleaning). Принтер начнет шуметь и прокачивать чернила. Сделайте это 2-3 раза.</p>
+                    <img src="https://www.tonfix-service.in.ua/images/tonfix-2017/Zapravka/blog/1051/3.png" 
+                         alt="Меню очистки головки" 
+                         class="step-img">
+                </div>
+            </div>
+
+            <h2 style="margin: 30px 0 20px; color: #e67e22;">Вариант Б: Лазерный принтер (HP, Brother, Samsung)</h2>
+
+            <div class="step">
+                <div class="step-number" style="background: #e67e22;">1</div>
+                <div class="step-content">
+                    <h3>Белые вертикальные полосы?</h3>
+                    <p>Если посередине текста идет белая выцветшая полоса — у вас <strong>заканчивается тонер</strong>.</p>
+                    <p><strong>Решение:</strong> Достаньте картридж и аккуратно потрясите его из стороны в сторону (горизонтально), чтобы распределить остатки порошка. Это даст вам еще 50-100 страниц печати.</p>
+                    <img src="https://avatars.mds.yandex.net/i?id=aeb0058fa000a57bd35cc2641b25051b_l-5235191-images-thumbs&n=13" 
+                         alt="Встряхивание картриджа" 
+                         class="step-img">
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number" style="background: #e67e22;">2</div>
+                <div class="step-content">
+                    <h3>Черные полосы или точки?</h3>
+                    <p>Если по краям листа идут черные полосы или повторяющиеся точки — поврежден <strong>Фотобарабан</strong> (зеленый или синий вал на картридже).</p>
+                    <p><strong>Решение:</strong> Прочистка не поможет. Нужно покупать новый картридж или менять фотобарабан в сервисе.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <a href="index.html" class="btn-back">Вернуться к списку</a>
+
+    </div>
+
+    <footer id="footer">
+        <p>&copy; 2025 TechFix. Учебный проект.</p>
+    </footer>
+
+</body>
+</html>
